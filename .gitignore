@@ -1,0 +1,21 @@
+# common project files
+/.settings
+/.project
+/.classpath
+/.idea
+/.gradle
+/build
+/target
+/bin
+/log
+
+# Subversion
+.svn
+
+# junk files
+[tT]humbs.db
+.DS_Store
+*.bak
+
+# Java
+*.class

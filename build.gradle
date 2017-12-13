@@ -1,0 +1,47 @@
+
+apply plugin: 'java-library'
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+group   = 'de.uplanet.lucy'
+version = '8.0.15'
+
+
+repositories {
+    jcenter()
+
+    maven {
+        url 'https://maven.unitedplanet.com'
+    }
+}
+
+
+dependencies {
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+
+    implementation group: 'org.eclipse.paho', name: 'org.eclipse.paho.client.mqttv3', version: '1.2.0'
+
+    api group: 'de.uplanet.lucy', name: 'ix-common',        version: '8.0.15'
+    api group: 'de.uplanet.lucy', name: 'ix-server-common', version: '8.0.15'
+    api group: 'de.uplanet.lucy', name: 'ix-server',        version: '8.0.15'
+
+    testImplementation group: 'org.easymock',      name: 'easymock',             version: '3.5.1'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api',    version: '5.0.2'
+    testImplementation group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '4.12.2'
+    testRuntimeOnly    group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.0.2'
+}
+
+
+jar {
+    manifest {
+        from('src/main/resources/META-INF/MANIFEST.MF')
+        attributes(
+            'Specification-Title':    project.name,
+            'Specification-Version':  '8.0.0',
+            'Implementation-Title':   project.name,
+            'Implementation-Version': version)
+    }
+}
