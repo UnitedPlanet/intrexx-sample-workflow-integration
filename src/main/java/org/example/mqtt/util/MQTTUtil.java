@@ -121,7 +121,6 @@ public final class MQTTUtil
 	 * Unsubscribe a MQTT client without throwing an exception.
 	 * @param p_client The MQTT client, or <code>null</code>.
 	 * @param p_strTopic The topic to unsubscribe from.
-	 * @return Always <code>null</code>.
 	 */
 	public static void unsubscribe(IMqttClient p_client, String p_strTopic)
 	{
