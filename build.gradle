@@ -7,7 +7,7 @@ targetCompatibility = 1.8
 
 
 group   = 'de.uplanet.lucy'
-version = '8.0.17'
+version = '8.1.15'
 
 
 repositories {
@@ -22,11 +22,11 @@ repositories {
 dependencies {
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
 
-    implementation group: 'org.eclipse.paho', name: 'org.eclipse.paho.client.mqttv3', version: '1.2.0'
+    implementation group: 'org.eclipse.paho', name: 'org.eclipse.paho.client.mqttv3', version: '1.2.2'
 
-    api group: 'de.uplanet.lucy', name: 'ix-common',        version: '8.0.17'
-    api group: 'de.uplanet.lucy', name: 'ix-server-common', version: '8.0.17'
-    api group: 'de.uplanet.lucy', name: 'ix-server',        version: '8.0.17'
+    api group: 'de.uplanet.lucy', name: 'ix-common',        version: '8.1.15'
+    api group: 'de.uplanet.lucy', name: 'ix-server-common', version: '8.1.15'
+    api group: 'de.uplanet.lucy', name: 'ix-server',        version: '8.1.15'
 
     testImplementation group: 'org.easymock',      name: 'easymock',             version: '3.5.1'
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api',    version: '5.0.2'
@@ -40,7 +40,7 @@ jar {
         from('src/main/resources/META-INF/MANIFEST.MF')
         attributes(
             'Specification-Title':    project.name,
-            'Specification-Version':  '8.0.0',
+            'Specification-Version':  '8.1.0',
             'Implementation-Title':   project.name,
             'Implementation-Version': version)
     }
