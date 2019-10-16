@@ -32,6 +32,7 @@ import de.uplanet.lucy.server.ContextValue;
 import de.uplanet.lucy.server.IProcessingContext;
 import de.uplanet.lucy.server.businesslogic.BlException;
 import de.uplanet.lucy.server.businesslogic.IBusinessLogicProcessingContext;
+import de.uplanet.lucy.server.businesslogic.rtdata.PERMISSION_CHECK;
 import de.uplanet.lucy.server.businesslogic.util.IDataRecord;
 import de.uplanet.lucy.server.dataobjects.IValueHolder;
 import de.uplanet.lucy.server.workflow.IWorkflowProcessingContext;
@@ -487,7 +488,8 @@ public final class MQTTMessageProducerWorkflowAction extends AbstractWorkflowAct
 			if (!BusinessLogicWorkflowUtil.hasRecord((IBusinessLogicProcessingContext)p_ctx))
 				throw new WorkflowException("No data record in the processing context.");
 
-			l_recSrcFull = BusinessLogicWorkflowUtil.readFullRecord((IBusinessLogicProcessingContext)p_ctx, false);
+			l_recSrcFull = BusinessLogicWorkflowUtil.readFullRecord
+				((IBusinessLogicProcessingContext)p_ctx, PERMISSION_CHECK.NO);
 
 			l_value = l_recSrcFull.getValueHolderByFieldGuid(m_dataCfg.getDataFieldGuid());
 		}
