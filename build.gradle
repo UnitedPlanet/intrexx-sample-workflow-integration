@@ -7,7 +7,7 @@ targetCompatibility = 1.8
 
 
 group   = 'de.uplanet.lucy'
-version = '8.0.15'
+version = '8.0.17'
 
 
 repositories {
@@ -24,9 +24,9 @@ dependencies {
 
     implementation group: 'org.eclipse.paho', name: 'org.eclipse.paho.client.mqttv3', version: '1.2.0'
 
-    api group: 'de.uplanet.lucy', name: 'ix-common',        version: '8.0.15'
-    api group: 'de.uplanet.lucy', name: 'ix-server-common', version: '8.0.15'
-    api group: 'de.uplanet.lucy', name: 'ix-server',        version: '8.0.15'
+    api group: 'de.uplanet.lucy', name: 'ix-common',        version: '8.0.17'
+    api group: 'de.uplanet.lucy', name: 'ix-server-common', version: '8.0.17'
+    api group: 'de.uplanet.lucy', name: 'ix-server',        version: '8.0.17'
 
     testImplementation group: 'org.easymock',      name: 'easymock',             version: '3.5.1'
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api',    version: '5.0.2'
