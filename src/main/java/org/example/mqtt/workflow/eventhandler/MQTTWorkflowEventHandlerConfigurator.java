@@ -1,5 +1,5 @@
 /*
- *  Copyright 2000-2017 United Planet GmbH, Freiburg Germany
+ *  Copyright 2000-2019 United Planet GmbH, Freiburg Germany
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import de.uplanet.lucy.server.workflow.AbstractWorkflowObjectConfigurator;
 
 /**
  * @author <a href="mailto:alexander.veit@unitedplanet.com">Alexander Veit</a>
- * @version $Revision: 176511 $
  */
 public final class MQTTWorkflowEventHandlerConfigurator extends AbstractWorkflowObjectConfigurator
 {

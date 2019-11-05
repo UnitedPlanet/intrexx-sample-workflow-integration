@@ -1,5 +1,5 @@
 /*
- *  Copyright 2000-2017 United Planet GmbH, Freiburg Germany
+ *  Copyright 2000-2019 United Planet GmbH, Freiburg Germany
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -32,8 +32,6 @@ import de.uplanet.lucy.server.workflow.eventhandler.AbstractWorkflowEventHandler
 
 /**
  * @author <a href="mailto:alexander.veit@unitedplanet.com">Alexander Veit</a>
- * @version $Revision: 167854 $
- * @since Intrexx 8.0.
  */
 public final class MQTTWorkflowEventHandler extends AbstractWorkflowEventHandler
 {
