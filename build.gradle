@@ -1,12 +1,20 @@
 
-apply plugin: 'java-library'
+plugins {
+	id 'java-library'
+}
 
+
+version = '10.0'
+
+ext.buildCommit    = 'git describe --always --tags --dirty=-dirty'.execute().text.trim()
+ext.buildTimestamp = java.time.format.DateTimeFormatter.ISO_INSTANT.format(java.time.Instant.now())
+ext.buildJdk       = "${System.properties['java.version']} (${System.properties['java.vendor']} ${System.properties['java.vm.version']})"
 
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 
 
-group = 'de.uplanet.lucy'
+group = 'org.example.mqtt'
 
 
 repositories {
@@ -19,28 +27,31 @@ repositories {
 
 
 dependencies {
-    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.26'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
 
-    implementation group: 'org.eclipse.paho', name: 'org.eclipse.paho.client.mqttv3', version: '1.2.2'
+    implementation group: 'org.eclipse.paho', name: 'org.eclipse.paho.client.mqttv3', version: '1.2.5'
 
-    api group: 'de.uplanet.lucy', name: 'ix-common',        version: '9.2.+'
-    api group: 'de.uplanet.lucy', name: 'ix-server-common', version: '9.2.+'
-    api group: 'de.uplanet.lucy', name: 'ix-server',        version: '9.2.+'
+	implementation group: 'de.uplanet.lucy', name: 'ix-common',        version: "${version}.+"
+	implementation group: 'de.uplanet.lucy', name: 'ix-server-common', version: "${version}.+"
+	implementation group: 'de.uplanet.lucy', name: 'ix-server',        version: "${version}.+"
 
-    testImplementation group: 'org.easymock',      name: 'easymock',             version: '3.5.1'
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api',    version: '5.0.2'
-    testImplementation group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '4.12.2'
-    testRuntimeOnly    group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.0.2'
+    testImplementation group: 'org.easymock',      name: 'easymock',             version: '4.+'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api',    version: '5.+'
+    testImplementation group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '4.+'
+    testRuntimeOnly    group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.+'
 }
 
 
 jar {
-    manifest {
-        from('src/main/resources/META-INF/MANIFEST.MF')
-        attributes(
-            'Specification-Title':    project.name,
-            'Specification-Version':  '9.2.0',
-            'Implementation-Title':   project.name,
-            'Implementation-Version': '9.2.0')
-    }
+	manifest {
+		from('src/main/resources/META-INF/MANIFEST.MF')
+		attributes(
+			'Specification-Title':    project.name,
+			'Specification-Version':  archiveVersion.get(),
+			'Implementation-Title':   project.name,
+			'Implementation-Version': archiveVersion.get(),
+			'Build-Revision':         buildCommit,
+			'Build-Timestamp':        buildTimestamp,
+			'Build-Jdk':              buildJdk)
+	}
 }

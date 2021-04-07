@@ -32,10 +32,10 @@ services can be implemented.
 
 ## Requirements
 
-* Intrexx 9.2 or greater
+* Intrexx 10.0 or greater
 * Java SE Development Kit 11
 
-For Intrexx 8.0 and 8.1 see tags intrexx-v8.0 and intrexx-v8.1 respectively.
+For Intrexx 8.0, 8.1, and 9.2 see tags intrexx-v8.0, intrexx-v8.1, and intrexx-v9.2 respectively.
 
 ## Building from source
 
@@ -46,9 +46,6 @@ cd intrexx-sample-workflow-integration
 ```
 
 ## Import as an Eclipse project
-
-This assumes that you have [Buildship Gradle Integration](https://marketplace.eclipse.org/content/buildship-gradle-integration)
-installed.
 
 ```bash
 git clone https://github.com/UnitedPlanet/intrexx-sample-workflow-integration.git
