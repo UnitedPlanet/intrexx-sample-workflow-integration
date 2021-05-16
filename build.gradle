@@ -1,6 +1,6 @@
 
 plugins {
-	id 'java-library'
+    id 'java-library'
 }
 
 
@@ -31,9 +31,9 @@ dependencies {
 
     implementation group: 'org.eclipse.paho', name: 'org.eclipse.paho.client.mqttv3', version: '1.2.5'
 
-	implementation group: 'de.uplanet.lucy', name: 'ix-common',        version: "${version}.+"
-	implementation group: 'de.uplanet.lucy', name: 'ix-server-common', version: "${version}.+"
-	implementation group: 'de.uplanet.lucy', name: 'ix-server',        version: "${version}.+"
+    implementation group: 'de.uplanet.lucy', name: 'ix-common',        version: "${version}.+"
+    implementation group: 'de.uplanet.lucy', name: 'ix-server-common', version: "${version}.+"
+    implementation group: 'de.uplanet.lucy', name: 'ix-server',        version: "${version}.+"
 
     testImplementation group: 'org.easymock',      name: 'easymock',             version: '4.+'
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api',    version: '5.+'
@@ -43,15 +43,16 @@ dependencies {
 
 
 jar {
-	manifest {
-		from('src/main/resources/META-INF/MANIFEST.MF')
-		attributes(
-			'Specification-Title':    project.name,
-			'Specification-Version':  archiveVersion.get(),
-			'Implementation-Title':   project.name,
-			'Implementation-Version': archiveVersion.get(),
-			'Build-Revision':         buildCommit,
-			'Build-Timestamp':        buildTimestamp,
-			'Build-Jdk':              buildJdk)
+    manifest {
+        from('src/main/resources/META-INF/MANIFEST.MF')
+        attributes(
+            'Specification-Title':    project.name,
+            'Specification-Version':  archiveVersion.get(),
+            'Implementation-Title':   project.name,
+            'Implementation-Version': archiveVersion.get(),
+            'Build-Revision':         buildCommit,
+            'Build-Timestamp':        buildTimestamp,
+            'Build-Jdk':              buildJdk)
 	}
 }
+
