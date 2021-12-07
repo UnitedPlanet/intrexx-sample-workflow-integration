@@ -4,14 +4,13 @@ plugins {
 }
 
 
-version = '10.0'
-
 ext.buildCommit    = 'git describe --always --tags --dirty=-dirty'.execute().text.trim()
 ext.buildTimestamp = java.time.format.DateTimeFormatter.ISO_INSTANT.format(java.time.Instant.now())
 ext.buildJdk       = "${System.properties['java.version']} (${System.properties['java.vendor']} ${System.properties['java.vm.version']})"
 
-sourceCompatibility = JavaVersion.VERSION_11
-targetCompatibility = JavaVersion.VERSION_11
+
+sourceCompatibility = JavaVersion.VERSION_16
+targetCompatibility = JavaVersion.VERSION_16
 
 
 group = 'org.example.mqtt'
@@ -27,13 +26,13 @@ repositories {
 
 
 dependencies {
-    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
 
     implementation group: 'org.eclipse.paho', name: 'org.eclipse.paho.client.mqttv3', version: '1.2.5'
 
-    implementation group: 'de.uplanet.lucy', name: 'ix-common',        version: "${version}.+"
-    implementation group: 'de.uplanet.lucy', name: 'ix-server-common', version: "${version}.+"
-    implementation group: 'de.uplanet.lucy', name: 'ix-server',        version: "${version}.+"
+    implementation group: 'de.uplanet.lucy', name: 'ix-common',        version: '10.+'
+    implementation group: 'de.uplanet.lucy', name: 'ix-server-common', version: '10.+'
+    implementation group: 'de.uplanet.lucy', name: 'ix-server',        version: '10.+'
 
     testImplementation group: 'org.easymock',      name: 'easymock',             version: '4.+'
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api',    version: '5.+'
@@ -47,12 +46,11 @@ jar {
         from('src/main/resources/META-INF/MANIFEST.MF')
         attributes(
             'Specification-Title':    project.name,
-            'Specification-Version':  archiveVersion.get(),
+            'Specification-Version':  '10.1',
             'Implementation-Title':   project.name,
-            'Implementation-Version': archiveVersion.get(),
+            'Implementation-Version': '10.1',
             'Build-Revision':         buildCommit,
             'Build-Timestamp':        buildTimestamp,
             'Build-Jdk':              buildJdk)
 	}
 }
-

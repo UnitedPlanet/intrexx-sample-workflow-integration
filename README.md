@@ -32,10 +32,10 @@ services can be implemented.
 
 ## Requirements
 
-* Intrexx 10.0 or greater
-* Java SE Development Kit 11
+* Intrexx 10.1 or greater
+* Java SE Development Kit 16
 
-For Intrexx 8.0, 8.1, and 9.2 see tags intrexx-v8.0, intrexx-v8.1, and intrexx-v9.2 respectively.
+For Intrexx 8.0, 8.1, 9.2, and 10.0 see tags intrexx-v8.0, intrexx-v8.1, intrexx-v9.2, intrexx-v10.0 respectively.
 
 ## Building from source
 
